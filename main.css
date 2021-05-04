@@ -7,6 +7,36 @@ body{
     background-color: #f0efec ;
 }
 
+.nav1{
+    background-color: #ACD4D6;
+}
+
+/* primera pantalla del quiz */
+.hiden{
+    width: 30%;
+    height: 45%;
+    background-color: rgb(135, 170, 222);
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    z-index: 8;
+    border-radius: 10px;
+    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
+    text-align: center;
+}
+
+.hiden h1{
+    font-size: 2.2rem;
+    margin-top: 1em;
+    color: #E1E6EC;
+}
+
+.hiden .btn{
+    background-color: #E1E6EC;
+    box-shadow: 5px 5px 11px #A2B1C6 , -2px -2px 3px  #fff;
+}
+
+/* quizz */
 .wrapper{
     width: 30%; 
     padding: .5em;
@@ -52,6 +82,7 @@ button{
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff;
 }
 
+/* texto de compra */
 .title1 {
     text-align: center;
     padding: 0 .5em;
@@ -65,9 +96,6 @@ button{
     margin-left: 10%;
 }
 
-.nav1{
-    background-color: #ACD4D6;
-}
 
 .footer{
     position: fixed;
@@ -77,3 +105,4 @@ button{
     width: 100%;
     color: #fff;
 }
+
