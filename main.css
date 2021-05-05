@@ -42,7 +42,7 @@ header img{
     border-radius: 10px;
     box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 .hiden h1{
@@ -120,7 +120,7 @@ button{
 .btn-buy{
     width: 25%;
     height: 4em;
-    margin-left: 38%;
+    margin-left: 37%;
     margin-bottom: 4em;
 }
 
