@@ -22,13 +22,47 @@ header h1{
     font-weight: bolder;
 }
 
-header img{
+/* Burguer menu */
+#sidebar{
     position: fixed;
-    top: 1.8em;
-    right: 1em;
-    width: 3em;
-    height: 3.1em;
+    background-color: #000;
+    height: 100%;
+    width: 23em;
+    left: -23em;
+    transition: .7s;
+    z-index: 6;
 }
+
+#sidebar.active {
+    left: 0em;
+}
+
+
+#sidebar ul li{
+    color: #E2E3FF;
+    list-style: none;
+    font-size: 3rem;
+    padding: .5em .5em;
+}
+
+#sidebar .burguer-menu{
+    position: absolute;
+    top: 2em;
+    left: 25em;
+}
+
+#sidebar .burguer-menu:hover{
+    cursor: pointer;
+}
+
+.burguer-menu span{
+    width: 3em;
+    height: 4px;
+    background: #E2E3FF;
+    display: block;
+    margin-top: 6px;
+}
+
 
 /* primera pantalla del quiz */
 .hiden{
@@ -36,9 +70,9 @@ header img{
     height: 52.5%;
     background-color: #2046BE;
     position: absolute;
-    top: 29%;
+    top: 28%;
     left: 24.5%;
-    z-index: 8;
+    z-index: 4;
     border-radius: 10px;
     box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
     text-align: center;
@@ -126,7 +160,7 @@ button{
 
 
 .footer{
-    position: fixed;
+    position:relative;
     bottom: 0;
     background-color: black;
     height: 6%;
