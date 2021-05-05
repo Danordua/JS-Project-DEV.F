@@ -143,6 +143,10 @@ button{
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff;
 }
 
+.final-btn{
+    display: none;
+}
+
 /* texto de compra */
 .title1 {
     text-align: center;
