@@ -37,13 +37,14 @@ hidenBtn.addEventListener('click', () => hiden.style.display = "none");
             // Se agarra el valor y se almacena en el array
             let val = btn.getAttribute("value");
             resultValues.push(val);
+            console.log(resultValues);
 
             //concicionales para que el quizz siga avanzando
             if (resultValues.length > 1){
                 quizText.innerText = "¿Qué color prefieres?";
                 quizBtns[0].innerText = "Azul";
-                quizBtns[1].innerText = "Naranja";
-                quizBtns[2].innerText = "Verde";
+                quizBtns[1].innerText = "Verde";
+                quizBtns[2].innerText = "Naranja";
                 quizBtns[3].innerText = "Rojo";
             }
             if (resultValues.length > 2){
@@ -115,15 +116,92 @@ const counterSong = () => {
     return arr.indexOf(highNum);
 }
 
+let songName = document.querySelector('#song-name');
+const sadAudio = "audios/sad.mp3";
+const baileAudio = "audios/baile.mp3";
+const rancheraAudio = "audios/ranchera.mp3";
+const rockAudio = "audios/rock.mp3";
+const songPic = document.querySelector('#song-img')
+
+const rockPic = "https://www.buscaletras.com/photos/albums/fidlar/max/fidlar.jpg";
+const sadPic = "https://images.genius.com/fa76d06434b20d74bca0b1979c21542c.1000x1000x1.jpg";
+const rancheraPic = "https://cdns-images.dzcdn.net/images/cover/e4b95031819404fbfa1122fa514582c7/500x500.jpg";
+const bailePic = "https://www.hoyesarte.com/constelac10n/files/2020/11/Koffee-Toast.jpg";
+
+let playBtn = document.querySelector("#play");
+let range = document.querySelector("#range");
+let playImg = document.querySelector("#play-img")
+let totalTime = 0;
+let currentTime = 0;
+let isPlaying = false;
+let song = new Audio();
+window.onload = playSong;
+console.log(playBtn)
+
+function playSong(recomend){
+    song.src = recomend;
+    console.log(song)
+    
+    playBtn.addEventListener('click', function() {
+        if (!isPlaying){
+            song.play();
+            totalTime = song.duration;
+            range.max = totalTime;
+            playImg.src = "imgs/pause.png"; 
+            isPlaying = true;
+            
+        } //else {
+        //         song.pause();
+        //         isPlaying = false;
+        //         playImg.src = "imgs/play1.png";  
+        //         console.log(isPlaying)
+        // }
+
+        song.addEventListener('ended',function(){
+            song.currentTime = 0
+            song.pause();
+            isPlaying = false;
+            range.value = 0;
+            playImg.src = "imgs/play1.png";
+        })
+        song.addEventListener('timeupdate',function(){
+            range.value = song.currentTime;
+        })
+        range.addEventListener('change',function(){
+            song.currentTime = range.value;
+        })
+    })
+}
+
+// función del reproductor
 
 sendBtn.addEventListener('click', () => {
     quizApp.style.display = 'none';
     player.style.display = "inline";
     document.querySelector('.wrapper2').style.marginTop = '25em';
-    if (counterSong() === 0) document.querySelector('#song-name').innerText = "sad";
-    if (counterSong() === 1) document.querySelector('#song-name').innerText = "baile";
-    if (counterSong() === 2) document.querySelector('#song-name').innerText = "ranchera";
-    if (counterSong() === 3) document.querySelector('#song-name').innerText = "rock";
+    // depediendo del resultado del resulArr se manda la función con ese audio
+    if (counterSong() === 0) {
+        songName.innerText = "Cupido - La Pared";
+        songPic.src = sadPic;
+        playSong(sadAudio);
+    }
+    if (counterSong() === 1){
+        songName.innerText = "Koffee - Toast";
+        songPic.src = bailePic;
+        playSong(baileAudio);
+    }
+    if (counterSong() === 2){ 
+        songName.innerText = "T3R Elemento - EL Chivo";
+        songPic.src = rancheraPic;
+        playSong(rancheraAudio);
+    }
+    if (counterSong() === 3){
+        songName.innerText = "FIDLAR - No Waves";
+        songPic.src = rockPic;
+        playSong(rockAudio);
+    }
 })
+
+
 
 

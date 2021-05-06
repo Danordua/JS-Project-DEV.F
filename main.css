@@ -133,17 +133,17 @@ button{
 }
 
 .btn2{
-    background-color: #82CD85; 
+    background-color: #34AC2C; 
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff;
 }
 
 .btn3{
-    background-color: #F36E6C; 
+    background-color: #FF9B4D; 
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff;
 }
 
 .btn4{
-    background-color: #F3D36C; 
+    background-color: #FF4D41 ; 
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff;
 }
 
@@ -152,30 +152,36 @@ button{
 }
 
 .final-btn span{
-    color: white;
+    color: #E1E6EC;
 }
 
 /* REPRODUCTOR */
 .container{
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 24.5%;
     padding: 6px;
     width: 49%;
-    height: 15em;
+    height: 21em;
     border-radius: 8px;
     background-color: #E1E6EC;
     box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff  ;
     text-align: center;
     display: none;
 }
-.player{
-    /* position: relative; */
+
+/* .player{
+    position: relative;
+} */
+
+.player img{
+    width: 25%;
+    margin-bottom: 1em;  
 }
 
 .container h1{
     font-size: 1.5rem;
-    margin: 1.5em 0 1em 0;
+    margin: .5em 0 1em 0;
 }
 .player-btns{
     display: inline-block;
@@ -218,19 +224,7 @@ button{
     background: #E1E6EC;
     box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
     border-radius: 50px;
-    margin: .9px 0;
-}
-.level::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    background-color: #A2B1C6;
-    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 5px  #fff  ;
-    width: 15px; /* Set a specific slider handle width */
-    height: 15px; /* Slider handle height */
-    border-radius: 90px;
-}
-.level::-moz-range-thumb{
-    width: 50px;
-    height: 50px;
+    margin: .9px 0 0 2em;
 }
 
 /* texto de compra */
