@@ -55,7 +55,7 @@ let inventario = [{
     stock: 6
 }
 ]
-​
+
 const buttons = document.querySelectorAll(".botones")
             console.log({buttons})
             buttons.forEach((button,i)=>{
@@ -68,8 +68,8 @@ const buttons = document.querySelectorAll(".botones")
                         console.log(selItem.stock);
                         alert("fue añadido al carrito");
                        
-                    } else {
+                    }else {
                         alert("no existe inventario")
                     } 
-                } 
-            }
+                }) 
+            })
