@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 
 body{
     background-color: #f0efec ;
+    font-family: 'Nunito', sans-serif;
 }
 
 .header{
@@ -35,6 +38,7 @@ header h1{
 
 #sidebar.active {
     left: 0em;
+    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
 }
 
 
@@ -67,10 +71,10 @@ header h1{
 /* primera pantalla del quiz */
 .hiden{
     width: 49%;
-    height: 52.5%;
+    height: 49.5%;
     background-color: #2046BE;
     position: absolute;
-    top: 28%;
+    top: 29.5%;
     left: 24.5%;
     z-index: 4;
     border-radius: 10px;
@@ -147,6 +151,88 @@ button{
     display: none;
 }
 
+.final-btn span{
+    color: white;
+}
+
+/* REPRODUCTOR */
+.container{
+    position: absolute;
+    top: 35%;
+    left: 24.5%;
+    padding: 6px;
+    width: 49%;
+    height: 15em;
+    border-radius: 8px;
+    background-color: #E1E6EC;
+    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff  ;
+    text-align: center;
+    display: none;
+}
+.player{
+    /* position: relative; */
+}
+
+.container h1{
+    font-size: 1.5rem;
+    margin: 1.5em 0 1em 0;
+}
+.player-btns{
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.player-btns button{
+    position: relative;
+    width: 3.125em;
+    height: 3.125em;
+    padding: 1em;
+    border-radius: 5.625em;
+    background-color: #E1E6EC;
+    text-align: left;
+    margin: 10px 9px;
+    border: none;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+    /*background:linear-gradient(-45deg,#a2b1c6,#fff);*/
+}
+.player-btns button:active{
+    background: #E1E6EC;
+    box-shadow: inset 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+}
+
+.player-btns button img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 42%;
+    height: 42%;
+}
+
+.level{
+    width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #E1E6EC;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 11px  #fff  ;
+    border-radius: 50px;
+    margin: .9px 0;
+}
+.level::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #A2B1C6;
+    box-shadow: 2px 2px 5px #A2B1C6 , -2px -2px 5px  #fff  ;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    border-radius: 90px;
+}
+.level::-moz-range-thumb{
+    width: 50px;
+    height: 50px;
+}
+
 /* texto de compra */
 .title1 {
     text-align: center;
@@ -164,11 +250,17 @@ button{
 
 
 .footer{
-    position:relative;
+    position:fixed;
     bottom: 0;
-    background-color: black;
+    background-color: #000;;
     height: 6%;
     width: 100%;
-    color: #fff;
+}
+
+.footer p{
+    font-size: 1.2rem;
+    margin-top: 2px;
+    color: #E1E6EC;
+    text-decoration: underline #2046BE 3px;
 }
 

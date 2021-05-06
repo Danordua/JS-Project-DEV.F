@@ -8,6 +8,10 @@ const quizBtns = document.querySelectorAll(".btn-quiz");
 const quizText = document.querySelector("#qText");
 const menu = document.querySelector('.burguer-menu');
 const sendBtn = document.querySelector('.final-btn');
+const player = document.querySelector('.container');
+const quizApp = document.querySelector('#quiz-app');
+
+console.log(quizApp)
 
 // Open and close de menu - navbar
 menu.addEventListener('click', () => {
@@ -84,16 +88,42 @@ hidenBtn.addEventListener('click', () => hiden.style.display = "none");
                 quizBtns[2].innerText = "Le robé los suyos a mi mamá/papá";
                 quizBtns[3].innerText = "Mejor compro viniles";
             }
+
+            //envia la pantalla final del quiz
             if (resultValues.length >= 9){
                 quizText.innerText = "¿Listo para descubrir música nueva?"
                 quizBtns.forEach(btn => btn.style.display = "none");
                 sendBtn.style.display = "inline";
             }
-            console.log(resultValues, resultValues.length);
-
         })
     })
 })();
 
+const counterSong = () => {
+        let sad = 0;
+        let baile = 0;
+        let ranchera = 0;
+        let rock = 0;
+    resultValues.forEach(val => {
+        if (val === "sad") sad++;
+        if (val === "baile") baile++;
+        if (val === "ranchera") ranchera++;
+        if (val === "rock") rock++;
+    })
+    let arr = [sad, baile, ranchera, rock];
+    let highNum = arr.reduce((a, b) => a < b ? b : a, 0);
+    return arr.indexOf(highNum);
+}
+
+
+sendBtn.addEventListener('click', () => {
+    quizApp.style.display = 'none';
+    player.style.display = "inline";
+    document.querySelector('.wrapper2').style.marginTop = '25em';
+    if (counterSong() === 0) document.querySelector('#song-name').innerText = "sad";
+    if (counterSong() === 1) document.querySelector('#song-name').innerText = "baile";
+    if (counterSong() === 2) document.querySelector('#song-name').innerText = "ranchera";
+    if (counterSong() === 3) document.querySelector('#song-name').innerText = "rock";
+})
 
 

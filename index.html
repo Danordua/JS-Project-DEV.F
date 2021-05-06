@@ -22,9 +22,9 @@
         </div>
 
         <ul>
-            <a href="#"><li>Work</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Common Q&A</li></a>
+            <a href="#"><li>Nosotros</li></a>
+            <a href="#"><li>Tienda</li></a>
+            <a href="#"><li>Preguntas</li></a>
             <a href="#"><li>Contact Us</li></a>
         </ul>
 
@@ -32,7 +32,7 @@
 
     <!-- -->
     <header class="header">
-        <h1>Title</h1>
+        <h1>MUSIC</h1>
     </header>
 
     <!-- Hiden -->
@@ -43,7 +43,7 @@
 
     <!-- Quiz -->
     <div class="container-fluid">
-        <div class="wrapper">
+        <div id="quiz-app" class="wrapper">
             <h3 id="qText">En que <span class="italic">mood</span>   te encuentras ahora:</h3>
             <div class="d-flex justify-content-around">
                 <button type="button" id="btn1" value="sad" class="btn mt-4 mb-3 btn1 btn-quiz">No doy una :^(</button>
@@ -54,7 +54,21 @@
                 <button type="button" id="btn4" value="rock" class="btn mb-2 mt-2 btn4 btn-quiz">Skate fast, eat trash</button>
             </div>
             <div class="final-btn">
-                <button type="button" id="final-btn" class="btn mb-2 mt-5 bg-primary w-75">Enviar</button>
+                <button type="button" id="final-btn" class="btn mb-2 mt-5 bg-primary w-75"><span>Enviar</span></button>
+            </div>
+        </div>
+
+        <!-- Reproductor de música -->
+        <div class="container">
+            <div class="player">
+                <h1 id="song-name">Nombre de la canción</h1>
+                <input id="range" class="level" type="range" value="0" min="0">
+                <div class="player-btns">
+                    <button class="player-btn" id="rewind"><img src="imgs/forward.png"></button>
+                    <button class="player-btn" id="play"><img id="play_img" src="imgs/play1.png"></button>
+                    <button class="player-btn" id="next"><img src="imgs/forward.png"></button>
+                </div>
+                
             </div>
         </div>
 
