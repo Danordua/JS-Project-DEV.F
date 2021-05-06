@@ -67,9 +67,15 @@ const buttons = document.querySelectorAll(".botones")
                         selItem.stock = selItem.stock - 1; 
                         console.log(selItem.stock);
                         alert("fue añadido al carrito");
-                       
                     }else {
                         alert("no existe inventario")
                     } 
                 }) 
             })
+
+
+const menu = document.querySelector('.burguer-menu');
+
+menu.addEventListener('click', () => {
+    document.getElementById('sidebar').classList.toggle('active');
+})

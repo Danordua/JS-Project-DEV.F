@@ -7,6 +7,63 @@ body{
     background-color: #f0efec ;
 }
 
+.header{
+    height: 7em;
+    background: #2046BE;
+}
+
+header h1{
+    text-align: center;
+    font-size: 5rem;
+    margin-left: .3em; 
+    color: #E2E3FF;
+    letter-spacing: .5em;
+    font-weight: bolder;
+}
+
+/* Burguer menu */
+#sidebar{
+    position: fixed;
+    background-color: #000;
+    height: 100%;
+    width: 23em;
+    left: -23em;
+    transition: .7s;
+    z-index: 6;
+}
+
+#sidebar.active {
+    left: 0em;
+    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
+}
+
+
+#sidebar ul li{
+    color: #E2E3FF;
+    list-style: none;
+    font-size: 3rem;
+    padding: .5em .5em;
+}
+
+#sidebar .burguer-menu{
+    position: absolute;
+    top: 2em;
+    left: 25em;
+}
+
+#sidebar .burguer-menu:hover{
+    cursor: pointer;
+}
+
+.burguer-menu span{
+    width: 3em;
+    height: 4px;
+    background: #E2E3FF;
+    display: block;
+    margin-top: 6px;
+}
+
+
 .wrapper{
     width: 30%; 
     padding: .5em;
