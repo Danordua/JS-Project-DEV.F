@@ -100,22 +100,29 @@ hidenBtn.addEventListener('click', () => hiden.style.display = "none");
     })
 })();
 
+
+// valor se repitio más
 const counterSong = () => {
+    //contadores
         let sad = 0;
         let baile = 0;
         let ranchera = 0;
         let rock = 0;
+        // itera por result values y suma al contador cuando encuentra cada valor
     resultValues.forEach(val => {
         if (val === "sad") sad++;
         if (val === "baile") baile++;
         if (val === "ranchera") ranchera++;
         if (val === "rock") rock++;
     })
+
+    //crea un array con los valores en distintos indices y regresa el indice con el mayor valor
     let arr = [sad, baile, ranchera, rock];
     let highNum = arr.reduce((a, b) => a < b ? b : a, 0);
     return arr.indexOf(highNum);
 }
 
+// variables de las canciones
 let songName = document.querySelector('#song-name');
 const sadAudio = "audios/sad.mp3";
 const baileAudio = "audios/baile.mp3";
@@ -123,11 +130,13 @@ const rancheraAudio = "audios/ranchera.mp3";
 const rockAudio = "audios/rock.mp3";
 const songPic = document.querySelector('#song-img')
 
+// variables de las imagenes de canciones
 const rockPic = "https://www.buscaletras.com/photos/albums/fidlar/max/fidlar.jpg";
 const sadPic = "https://images.genius.com/fa76d06434b20d74bca0b1979c21542c.1000x1000x1.jpg";
 const rancheraPic = "https://cdns-images.dzcdn.net/images/cover/e4b95031819404fbfa1122fa514582c7/500x500.jpg";
 const bailePic = "https://www.hoyesarte.com/constelac10n/files/2020/11/Koffee-Toast.jpg";
 
+//variables del reproductor
 let playBtn = document.querySelector("#play");
 let range = document.querySelector("#range");
 let playImg = document.querySelector("#play-img")
@@ -138,10 +147,12 @@ let song = new Audio();
 window.onload = playSong;
 console.log(playBtn)
 
+// funcion del reproductor
 function playSong(recomend){
     song.src = recomend;
     console.log(song)
     
+    // para que se escuche la canción
     playBtn.addEventListener('click', function() {
         if (!isPlaying){
             song.play();
