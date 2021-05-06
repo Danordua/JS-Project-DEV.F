@@ -56,7 +56,7 @@ let inventario = [{
 }
 ]
 ​
-const buttons = document.querySelectorAll("")
+const buttons = document.querySelectorAll(".botones")
             console.log({buttons})
             buttons.forEach((button,i)=>{
                 button.addEventListener("click",()=>{
@@ -67,7 +67,9 @@ const buttons = document.querySelectorAll("")
                         selItem.stock = selItem.stock - 1; 
                         console.log(selItem.stock);
                         alert("fue añadido al carrito");
-                        
+                       
                     } else {
                         alert("no existe inventario")
-                    }
+                    } 
+                } 
+            }
