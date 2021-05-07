@@ -13,16 +13,16 @@ const quizApp = document.querySelector('#quiz-app');
 
 console.log(quizApp)
 
-// Open and close de menu - navbar
+ // Open and close de menu - navbar
 menu.addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('active');
 })
 
 let resultValues =  new Array();
-// Cerrar la primera pantalla del quiz
+ // Cerrar la primera pantalla del quiz
 hidenBtn.addEventListener('click', () => hiden.style.display = "none");
 
-//función del quiz
+ //función del quiz
 (function quiz(){
     //for each para que la función trabajo con todos los botones
     quizBtns.forEach(btn => {
@@ -101,7 +101,7 @@ hidenBtn.addEventListener('click', () => hiden.style.display = "none");
 })();
 
 
-// valor se repitio más
+ // valor se repitio más
 const counterSong = () => {
     //contadores
         let sad = 0;
@@ -122,7 +122,7 @@ const counterSong = () => {
     return arr.indexOf(highNum);
 }
 
-// variables de las canciones
+ // variables de las canciones
 let songName = document.querySelector('#song-name');
 const sadAudio = "audios/sad.mp3";
 const baileAudio = "audios/baile.mp3";
@@ -130,13 +130,13 @@ const rancheraAudio = "audios/ranchera.mp3";
 const rockAudio = "audios/rock.mp3";
 const songPic = document.querySelector('#song-img')
 
-// variables de las imagenes de canciones
+ // variables de las imagenes de canciones
 const rockPic = "https://www.buscaletras.com/photos/albums/fidlar/max/fidlar.jpg";
 const sadPic = "https://images.genius.com/fa76d06434b20d74bca0b1979c21542c.1000x1000x1.jpg";
 const rancheraPic = "https://cdns-images.dzcdn.net/images/cover/e4b95031819404fbfa1122fa514582c7/500x500.jpg";
 const bailePic = "https://www.hoyesarte.com/constelac10n/files/2020/11/Koffee-Toast.jpg";
 
-//variables del reproductor
+ //variables del reproductor
 let playBtn = document.querySelector("#play");
 let range = document.querySelector("#range");
 let playImg = document.querySelector("#play-img")
@@ -144,10 +144,9 @@ let totalTime = 0;
 let currentTime = 0;
 let isPlaying = false;
 let song = new Audio();
-window.onload = playSong;
 console.log(playBtn)
 
-// funcion del reproductor
+ // funcion del reproductor
 function playSong(recomend){
     song.src = recomend;
     console.log(song)
@@ -160,13 +159,13 @@ function playSong(recomend){
             range.max = totalTime;
             playImg.src = "imgs/pause.png"; 
             isPlaying = true;
-            
-        } //else {
-        //         song.pause();
-        //         isPlaying = false;
-        //         playImg.src = "imgs/play1.png";  
-        //         console.log(isPlaying)
-        // }
+            console.log(isPlaying);
+        } else {
+                song.pause();
+                isPlaying = false;
+                playImg.src = "imgs/play1.png";  
+                console.log(isPlaying)
+    }
 
         song.addEventListener('ended',function(){
             song.currentTime = 0
@@ -184,7 +183,7 @@ function playSong(recomend){
     })
 }
 
-// función del reproductor
+ // función del reproductor
 
 sendBtn.addEventListener('click', () => {
     quizApp.style.display = 'none';
