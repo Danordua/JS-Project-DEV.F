@@ -38,15 +38,17 @@ header h1{
 
 #sidebar.active {
     left: 0em;
-    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
 }
 
 
 #sidebar ul li{
-    color: #E2E3FF;
     list-style: none;
     font-size: 3rem;
     padding: .5em .5em;
+}
+
+#sidebar ul li a {
+    color: #E2E3FF;
 }
 
 #sidebar .burguer-menu{
