@@ -27,7 +27,9 @@ const quizApp = document.querySelector('#quiz-app');
 
  menu.addEventListener('click', toggleMenu);
 
-document.querySelector('main').addEventListener('click', () => {
+ const main = document.querySelector('main');
+ console.log(main);
+main.addEventListener('click', () => {
     if(menuIsON){
     side.style.left = '-23em';
     menu.style.display = 'block';
