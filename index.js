@@ -1,22 +1,42 @@
 const hiden = document.querySelector('.hiden');
 const hidenBtn = document.querySelector("#hiden-btn");
+
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const btn3 = document.querySelector("#btn3");
 const btn4 = document.querySelector("#btn4");
 const quizBtns = document.querySelectorAll(".btn-quiz");
 const quizText = document.querySelector("#qText");
+
 const menu = document.querySelector('.burguer-menu');
+const side = document.getElementById('sidebar')
+
 const sendBtn = document.querySelector('.final-btn');
+
 const player = document.querySelector('.container');
 const quizApp = document.querySelector('#quiz-app');
 
-console.log(quizApp)
 
  // Open and close de menu - navbar
-menu.addEventListener('click', () => {
-    document.getElementById('sidebar').classList.toggle('active');
+ let menuIsON = false;
+ const toggleMenu = (num, dis) => {
+     side.style.left = 0;
+    menu.style.display = 'none';
+    menuIsON = true;
+}
+
+ menu.addEventListener('click', toggleMenu);
+
+document.querySelector('main').addEventListener('click', () => {
+    if(menuIsON){
+    side.style.left = '-23em';
+    menu.style.display = 'block';
+    menuIsON = false;
+    }
+    return;
 })
+
+
 
 let resultValues =  new Array();
  // Cerrar la primera pantalla del quiz
