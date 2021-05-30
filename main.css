@@ -71,45 +71,41 @@ header h1{
 
 /* primera pantalla del quiz */
 .hiden{
-    width: 49%;
+    width: 60%;
     height: 49.5%;
-    background-color: #2046BE;
-    position: absolute;
-    top: 29.5%;
-    left: 24.5%;
-    z-index: 4;
-    border-radius: 10px;
-    box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff;
+    margin: 5em auto 3.5em auto;
     text-align: center;
     /* display: none; */
 }
 
 .hiden h1{
     padding: 0 1em;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 1em;
-    color: #E2E3FF;
+    color: black;
 }
 
 .hiden .btn{
     font-size: 1.5rem;
-    background-color: #E2E3FF;
+    color: wheat;
+    background-color: blue;
     box-shadow: 5px 5px 11px #A2B1C6 , -2px -2px 3px  #fff;
-    width: 60%;
-}
+    width: 50%;
+} 
 
 /* quizz */
 .wrapper{
     width: 50%; 
     padding: 3em 3em;
     margin-top: 4em;
-    margin-left: 24%;
+    margin-left: 25%;
     margin-bottom: 3em;
     border-radius: .9em;
     background-color: #E1E6EC;
     box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff  ;
     text-align: center;
     font-family: 'Nunito', sans-serif;
+    display: none;
 }
 
 .italic{
@@ -220,6 +216,10 @@ button{
 }
 
 /* texto de compra */
+.wrapper2 {
+    margin: 0 auto;
+}
+
 .title1 {
     text-align: center;
     padding: 0 .5em;
@@ -249,4 +249,39 @@ button{
     color: #E1E6EC;
     text-decoration: underline #2046BE 3px;
 }
+
+@media (min-width: 1600px){
+
+    .hiden h1{
+        font-size: 4.5rem;
+    }
+
+    .hiden .btn{
+        font-size: 2rem;
+        padding-top: .5em;
+        padding-bottom: 2em;
+        width: 45%;
+
+    } 
+
+    .wrapper{
+        max-width: 50em;
+        padding: 3em 3em;
+        margin-top: 4em;
+        margin-left: 28%;
+        margin-bottom: 3em;
+    }
+}
+
+@media (max-width: 850px){
+
+  header h1 {
+      font-size: 3.3rem;
+  }  
+
+  .title1{
+      font-size: 2rem;
+  }
+}
+
 

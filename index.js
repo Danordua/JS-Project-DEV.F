@@ -39,11 +39,14 @@ main.addEventListener('click', () => {
     return;
 })
 
-
+const wrapper = document.querySelector('.wrapper');
+ // Cerrar la primera pantalla del quiz
+hidenBtn.addEventListener('click', () => {
+    hiden.style.display = "none";
+    wrapper.style.display = 'block';
+});
 
 let resultValues =  new Array();
- // Cerrar la primera pantalla del quiz
-hidenBtn.addEventListener('click', () => hiden.style.display = "none");
  
 // valor que se actualiza (suma uno) cada vez que se da click a un botón
 let testValue = 1;

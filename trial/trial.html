@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Component</title>
+    <link rel="stylesheet" href="trial.css">
+
+    <script src="https://kit.fontawesome.com/97b1e7a7a6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+      <div class="package">
+        <div class="dinamic-info">
+          <h3 class="pages"><span class="value-num">0</span> PAGEVIEWS</h3>
+          <h2 class="price">$<span class="price-num">0</span>.00<span class="month"> / month</span></h2>
+        </div>
+        <div class="slider">
+          <input id="range" class="level" type="range" min="1" max="5" value="1">
+          <div class="steps">
+          <div class="step1"></div>
+          <div class="step2"></div>
+          <div class="step3"></div>
+          <div class="step4"></div>
+          <div class="step5"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="choose-bill">
+          <p class="monthly">Monthly Billing</p>
+          <label class="switch-select" for="switch">
+            <input class="toggle__input" id="switch" type="checkbox">
+            <div class="switch-fill"></div>
+          </label>
+          <p class="yearly">Yearly Billing</p>
+          <p class="discount">25% discount</p>
+      </div>
+
+      <div class="info-package">
+          <div class="info-text">
+              <p class="info-item"><i class="fas x1 fa-times"></i>Unlimited websites</p>
+              <p class="info-item"><i class="fas green fa-check"></i>100% data ownership</p>
+              <p class="info-item"><i class="fas x3 fa-times"></i>Email reports</p>
+          </div>
+
+          <button class="trial-btn">Start my trial</button>
+      </div>
+
+    </div>
+
+    <script src="trial.js"></script>
+</body>
+</html>
