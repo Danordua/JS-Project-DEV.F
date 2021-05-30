@@ -1,5 +1,4 @@
-import {quizQuestions} from './data.js';
-console.log(quizQuestions);
+import {quizQuestions, Songs} from './data.js';
 
 const hiden = document.querySelector('.hiden');
 const hidenBtn = document.querySelector("#hiden-btn");
@@ -8,7 +7,6 @@ const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const btn3 = document.querySelector("#btn3");
 const btn4 = document.querySelector("#btn4");
-const quizBtns = document.querySelectorAll(".btn-quiz");
 const quizB = [btn1, btn2, btn3, btn4];
 const quizText = document.querySelector("#qText");
 
@@ -51,7 +49,7 @@ hidenBtn.addEventListener('click', () => hiden.style.display = "none");
 let testValue = 1;
 (function quiz(){
     //for each para que la función trabajo con todos los botones
-    quizBtns.forEach(btn => {
+    quizB.forEach(btn => {
         // cambio de opciones cada que se escoge una 
         btn.addEventListener('click', () => {
             if (resultValues.length < 8){
@@ -71,13 +69,12 @@ let testValue = 1;
             //envia la pantalla final del quiz
             if (resultValues.length > 8){
                 quizText.innerText = "¿Listo para descubrir música nueva?"
-                quizBtns.forEach(btn => btn.style.display = "none");
+                quizB.forEach(btn => btn.style.display = "none");
                 sendBtn.style.display = "inline";
             }
         })
     })
 })();
-
 
  // valor se repitio más
 const counterSong = () => {
@@ -102,17 +99,7 @@ const counterSong = () => {
 
  // variables de las canciones
 let songName = document.querySelector('#song-name');
-const sadAudio = "audios/sad.mp3";
-const baileAudio = "audios/baile.mp3";
-const rancheraAudio = "audios/ranchera.mp3";
-const rockAudio = "audios/rock.mp3";
 const songPic = document.querySelector('#song-img')
-
- // variables de las imagenes de canciones
-const rockPic = "https://www.buscaletras.com/photos/albums/fidlar/max/fidlar.jpg";
-const sadPic = "https://images.genius.com/fa76d06434b20d74bca0b1979c21542c.1000x1000x1.jpg";
-const rancheraPic = "https://cdns-images.dzcdn.net/images/cover/e4b95031819404fbfa1122fa514582c7/500x500.jpg";
-const bailePic = "https://www.hoyesarte.com/constelac10n/files/2020/11/Koffee-Toast.jpg";
 
  //variables del reproductor
 let playBtn = document.querySelector("#play");
@@ -163,30 +150,16 @@ function playSong(recomend){
  // función del reproductor
 
 sendBtn.addEventListener('click', () => {
+
     quizApp.style.display = 'none';
     player.style.display = "inline";
-    document.querySelector('.wrapper2').style.marginTop = '25em';
+    document.querySelector('.wrapper2').style.marginTop = '30em';
+
+    let songChoosed = counterSong();
     // depediendo del resultado del resulArr se manda la función con ese audio
-    if (counterSong() === 0) {
-        songName.innerText = "Cupido - La Pared";
-        songPic.src = sadPic;
-        playSong(sadAudio);
-    }
-    if (counterSong() === 1){
-        songName.innerText = "Koffee - Toast";
-        songPic.src = bailePic;
-        playSong(baileAudio);
-    }
-    if (counterSong() === 2){ 
-        songName.innerText = "T3R Elemento - EL Chivo";
-        songPic.src = rancheraPic;
-        playSong(rancheraAudio);
-    }
-    if (counterSong() === 3){
-        songName.innerText = "FIDLAR - No Waves";
-        songPic.src = rockPic;
-        playSong(rockAudio);
-    }
+        songName.innerText = Songs[songChoosed].nombre;
+        songPic.src = Songs[songChoosed].img;
+        playSong(Songs[songChoosed].src)
 })
 
 
