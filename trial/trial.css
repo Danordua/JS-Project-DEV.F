@@ -15,7 +15,7 @@
 }
 
 *, *::after, *::before {
-    box-sizing: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -30,6 +30,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    /* height: 20em; */
     padding: 2em;
     background: var(--white-clr);
     border-radius: 25px;

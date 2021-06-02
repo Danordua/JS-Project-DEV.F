@@ -154,7 +154,7 @@ button{
     left: 24.5%;
     padding: 6px;
     width: 49%;
-    height: 21em;
+    height: 57%;
     border-radius: 8px;
     background-color: #E1E6EC;
     box-shadow: 5px 5px 11px #A2B1C6 , -5px -5px 11px  #fff  ;
@@ -182,7 +182,6 @@ button{
     position: relative;
     width: 3.125em;
     height: 3.125em;
-    padding: 1em;
     border-radius: 5.625em;
     background-color: #E1E6EC;
     text-align: left;
@@ -271,6 +270,11 @@ button{
         margin-left: 28%;
         margin-bottom: 3em;
     }
+
+    .container {
+        height: 24.5em;
+    }
+
 }
 
 @media (max-width: 850px){
@@ -284,4 +288,13 @@ button{
   }
 }
 
+@media (min-width: 1800px){
+    .container {
+        height: 27em;
+    }
+
+    .wrapper2 h1 {
+        margin-top: 12em;
+    }
+}
 

@@ -1,3 +1,4 @@
+
 const level = document.querySelector('#range');
 
 const numPages = document.querySelector('.value-num');
