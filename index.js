@@ -156,7 +156,7 @@ sendBtn.addEventListener('click', () => {
 
     quizApp.style.display = 'none';
     player.style.display = "inline";
-    document.querySelector('.wrapper2').style.marginTop = '30em';
+    document.querySelector('.wrapper2').style.marginTop = '31em';
 
     let songChoosed = counterSong();
     // depediendo del resultado del resulArr se manda la función con ese audio
